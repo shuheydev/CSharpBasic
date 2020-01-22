@@ -4,28 +4,21 @@ namespace CSharpBasic
 {
     class Program
     {
-        public delegate bool Judgement(int value);
-
-        static bool IsEven(int n)
-        {
-            return n % 2==0;
-        }
-
         static void Main(string[] args)
         {
             var numbers = new[] { 5, 3, 9, 6, 7, 5, 8, 1, 0, 5, 10, 4 };
 
-            var result = Count(numbers,IsEven);
+            var result = Count(numbers, n => n % 2 == 0);
 
             Console.WriteLine(result);
         }
 
-        static int Count(int[] numbers,Judgement judge)
+        static int Count(int[] numbers, Func<int,bool> judge)
         {
             int count = 0;
-            foreach(var n in numbers)
+            foreach (var n in numbers)
             {
-                if(judge(n)==true)
+                if (judge(n) == true)
                 { count++; }
             }
 
