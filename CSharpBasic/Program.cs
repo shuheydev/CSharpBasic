@@ -6,15 +6,15 @@ namespace CSharpBasic
     {
         static void Main(string[] args)
         {
-            var result = Count(3);
+            var numbers = new[] { 5, 3, 9, 6, 7, 5, 8, 1, 0, 5, 10, 4 };
+
+            var result = Count(numbers,3);
 
             Console.WriteLine(result);
         }
 
-        static int Count(int num)
+        static int Count(int[] numbers,int num)
         {
-            var numbers = new[] { 5, 3, 9, 6, 7, 5, 8, 1, 0, 5, 10, 4 };
-
             int count = 0;
             foreach(var n in numbers)
             {
